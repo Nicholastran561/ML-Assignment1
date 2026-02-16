@@ -43,17 +43,20 @@ for row in db:
     encoded_row.append(feature_map[i][feature])
   
   X.append(encoded_row)
+  # print(encoded_row) # To check the encoded features
+# print(feature_map) # To check the mapping of features to numbers
 
 #encode the original categorical training classes into numbers and add to thevector Y.
 #--> addd your Python code here
 # Y =
 
-class_map = { # In class_names, 'Yes' is represented as 0 and 'No' is represented as 1
+class_map = { # In class_names, 'Yes' is represented as 0 and 'No' is represented as 1 (needed it the plotting of the decision tree)
   'Yes': 0,
   'No': 1
 }
 for row in db:
   Y.append(class_map[row[-1]]) # Assuming the class label is in the last column
+# print(Y) # To check the encoded class labels
 
 
 #fitting the depth-2 decision tree to the data using entropy as your impurity measure
